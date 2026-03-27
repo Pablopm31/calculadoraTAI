@@ -1,4 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora TAI</title>
+<style>
+  body {
+    font-family: Arial;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  input {
+    width: 80px;
+    margin: 5px;
+  }
+  button {
+    margin-top: 10px;
+    padding: 10px;
+  }
+</style>
+</head>
 
+<body>
+
+<h2>Calculadora Nota TAI</h2>
+
+<h3>Parte 1 (80 preguntas)</h3>
+<input type="number" id="aciertos1" placeholder="Aciertos"><br>
+<input type="number" id="fallos1" placeholder="Fallos"><br>
+
+<h3>Parte 2 (20 preguntas)</h3>
+<input type="number" id="aciertos2" placeholder="Aciertos"><br>
+<input type="number" id="fallos2" placeholder="Fallos"><br>
+
+<button onclick="calcular()">Calcular Nota</button>
+
+<h3 id="resultado"></h3>
+
+<script>
+function calcular() {
+  let a1 = parseFloat(document.getElementById("aciertos1").value) || 0;
+  let f1 = parseFloat(document.getElementById("fallos1").value) || 0;
+  let a2 = parseFloat(document.getElementById("aciertos2").value) || 0;
+  let f2 = parseFloat(document.getElementById("fallos2").value) || 0;
+
+  // Cálculos
+  let parte1 = a1 - (f1 * 0.25);
+  let parte2 = (a2 - (f2 * 0.25)) * 4;
+
+  let total = parte1 + parte2;
+
+  document.getElementById("resultado").innerText =
+    "Nota total: " + total.toFixed(2);
+}
+</script>
+
+</body>
 </html>
