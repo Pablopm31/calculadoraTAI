@@ -120,8 +120,8 @@ function calcular() {
   let a2 = parseFloat(document.getElementById("aciertos2").value) || 0;
   let f2 = parseFloat(document.getElementById("fallos2").value) || 0;
 
-  let parte1 = a1 - (f1 * 0.25);
-  let parte2 = (a2 - (f2 * 0.25)) * 4;
+  let parte1 = a1 - (f1 / 3.0);
+  let parte2 = (a2 - (f2 / 3.0)) * 4;
   let total = parte1 + parte2;
 
   let nota10 = (total / 160) * 10;
