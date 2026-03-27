@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora TAI</title>
+</head>
+<body>
+
+<h2>Calculadora Nota TAI</h2>
+
+<label>Aciertos:</label>
+<input type="number" id="aciertos"><br>
+
+<label>Errores:</label>
+<input type="number" id="errores"><br>
+
+<button onclick="calcular()">Calcular</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcular() {
+  let aciertos = parseFloat(document.getElementById("aciertos").value);
+  let errores = parseFloat(document.getElementById("errores").value);
+
+  let nota = aciertos - (errores * 0.33); // ejemplo típico
+  document.getElementById("resultado").innerText = "Nota: " + nota.toFixed(2);
+}
+</script>
+
+</body>
+</html>
